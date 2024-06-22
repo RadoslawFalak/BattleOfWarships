@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WarshipCombat;
+using NAudio.Wave;
 
 namespace BattleOfWarships
 {
@@ -21,28 +22,44 @@ namespace BattleOfWarships
                           "X 3. EXIT        X\r\n" +
                           "X-_-_-_-_-_-_-_-_X\r\n" +
                           "XXXXXXXXXXXXXXXXXX");
-            int choice = int.Parse(Console.ReadLine());
-            switch (choice)
+            string soundFilePath = "D:\\Projects\\BattleOfWarships\\epic-battle-sound-9414.mp3";
+            int choice = 0;
+            using (var audioFile = new Mp3FileReader(soundFilePath))
+            using (var outputDevice = new WaveOutEvent())
             {
-                case 1:
-                    {
-                        GameRules.GameRulesPrint();
-                        break;
-                    }
-                case 2:
-                    {
-                        Console.Clear();
-                        GameBoard.GameBoardPrint();
-                        ShipDraw.FiveFlagships();
-                        GameBoard.GameBoardPrint();
-                        break;
-                    }
-                case 3:
-                    {
-                        Environment.Exit(0);
-                        break;
-                    }
+                outputDevice.Init(audioFile);
+                outputDevice.Play();
+
+                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                {
+                    choice = int.Parse(Console.ReadLine());
+                }
+                switch (choice)
+                {
+                    case 1:
+                        {
+                            Console.Clear();
+                            GameRules.GameRulesPrint();
+                            break;
+                        }
+                    case 2:
+                        {
+                            Console.Clear();
+                            ShipDraw.FiveFlagships();
+                            ShipDraw.FourFlagships();
+                            ShipDraw.ThreeFlagships();
+                            ShipDraw.TwoFlagships();
+                            ShipDraw.TwoFlagships();
+                            GameBoard.PrintArray(GameBoard.gameBoard);
+                            break;
+                        }
+                    case 3:
+                        {
+                            Environment.Exit(0);
+                            break;
+                        }
+                }
             }
-        }    
+        }
     }
 }
