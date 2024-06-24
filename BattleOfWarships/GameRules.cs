@@ -10,18 +10,23 @@ namespace BattleOfWarships
     {
         public static void GameRulesPrint() 
         {
-            Console.WriteLine("Zasady gry ");
-            Console.WriteLine("Press eny key to return to the menu");
-            string enyKey = Console.ReadLine();
-            for( ; ; )
+            String line;
+            Console.Clear();
+            StreamReader sr = new StreamReader("gameRules.txt");
+            line = sr.ReadLine();
+            while (line != null)
             {
-                if (enyKey != null)
-                {
-                    Console.Clear();
-                    Menu.MenuPrint();
-                    break;
-                }
+                //write the line to console window
+                Console.WriteLine(line);
+                //Read the next line
+                line = sr.ReadLine();
             }
+            //close the file
+            sr.Close();
+            Console.WriteLine("Press any key to return to the menu");
+            Console.ReadKey();
+            Console.Clear();
+            Menu.MenuPrint();
         }
     }
 }

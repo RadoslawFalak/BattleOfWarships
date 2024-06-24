@@ -22,35 +22,36 @@ namespace BattleOfWarships
                           "X 3. EXIT        X\r\n" +
                           "X-_-_-_-_-_-_-_-_X\r\n" +
                           "XXXXXXXXXXXXXXXXXX");
-            string soundFilePath = "D:\\Projects\\BattleOfWarships\\epic-battle-sound-9414.mp3";
+            string soundFilePath = "epic-battle-sound-9414.mp3";
             int choice = 0;
             using (var audioFile = new Mp3FileReader(soundFilePath))
             using (var outputDevice = new WaveOutEvent())
             {
                 outputDevice.Init(audioFile);
                 outputDevice.Play();
-
-                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                string input = Console.ReadLine();
+                for (; ; )
                 {
-                    choice = int.Parse(Console.ReadLine());
-                }
+                    if (int.TryParse(input, out choice))
+                    {
+                        break;
+                    } 
+                    else
+                    {
+                            Console.Write("Select a number from 1 to 3: ");
+                            input = Console.ReadLine();                   
+                    }                   
+                }                
                 switch (choice)
                 {
                     case 1:
                         {
-                            Console.Clear();
                             GameRules.GameRulesPrint();
                             break;
                         }
                     case 2:
                         {
-                            Console.Clear();
-                            ShipDraw.FiveFlagships();
-                            ShipDraw.FourFlagships();
-                            ShipDraw.ThreeFlagships();
-                            ShipDraw.TwoFlagships();
-                            ShipDraw.TwoFlagships();
-                            GameBoard.PrintArray(GameBoard.gameBoard);
+                            GamePlay.OnePlayerGame();
                             break;
                         }
                     case 3:
