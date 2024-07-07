@@ -1,0 +1,4 @@
+Zasady gry: gra polega na jak najszybszym zatopieniu statków wroga. 
+Strzałów na wrogie okręty możesz dokonać poprzez podanie 
+współrzednych na polu gry z zakresu od A do J poziomo i od 1 do 10 pionowo. 
+Żeby ukończyć rogrywkę należy dokonać 16 trafień. Powodzenia !!! 
