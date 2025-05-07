@@ -1,4 +1,3 @@
-Zasady gry: gra polega na jak najszybszym zatopieniu statków wroga. 
-Strzałów na wrogie okręty możesz dokonać poprzez podanie 
-współrzednych na polu gry z zakresu od A do J poziomo i od 1 do 10 pionowo. 
-Żeby ukończyć rogrywkę należy dokonać 16 trafień. Powodzenia !!! 
+Zasady gry: gra polega na jak najszybszym zatopieniu statków wroga. Strzałów na wrogie okręty, możesz dokonać poprzez podanie współrzednych na polu gry z zakresu od A do J poziomo i od 1 do 10 pionowo. Żeby ukończyć rogrywkę należy dokonać 16 trafień. W przypadku opcji GRACZ VS KOMPUTER, wybieramy dodatkowo poziom trudności. Na poziomie pierwszym, komputer na każdy strzał gracza odpowiada również jednym strzałem, na poziomie drugim odpowiada dwoma strzałami, a na trzecim trzema. Wynik komputera nie zapisuje sie na liście Top Ten. Powodzenia !!! 
+
+Game rules: the game consists of sinking enemy ships as quickly as possible. You can shoot at enemy ships by entering coordinates on the game field from A to J horizontally and from 1 to 10 vertically. To complete the game, you must make 16 hits. In the case of the PLAYER VS COMPUTER option, we additionally select the difficulty level. On the first level, the computer responds to each player shot with one shot, on the second level it responds with two shots, and on the third level with three. The computer's result is not saved on the Top Ten list. Good luck!!!
